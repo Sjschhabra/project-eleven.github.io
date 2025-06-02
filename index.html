@@ -5,27 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Project Eleven - Robotic Dog</title>
   <style>
+    /* Background with black patches on white */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #ffe6f0; /* light pink */
-      color: #333;
       margin: 0;
       padding: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
+      background: white;
+      background-image:
+        radial-gradient(circle at 20% 30%, black 40px, transparent 45px),
+        radial-gradient(circle at 70% 60%, black 50px, transparent 55px),
+        radial-gradient(circle at 50% 80%, black 30px, transparent 35px),
+        radial-gradient(circle at 80% 20%, black 45px, transparent 50px),
+        radial-gradient(circle at 30% 70%, black 35px, transparent 40px);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #111; /* dark text */
     }
     header {
-      background-color: #ff99bb; /* medium light pink */
-      color: white;
+      background-color: #000000; /* black */
+      color: #ffe6f0; /* light pink */
       width: 100%;
       padding: 1rem 0;
       font-size: 1.8rem;
       font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 10;
+      position: relative;
     }
     main {
       max-width: 600px;
@@ -34,13 +45,25 @@
       border-radius: 8px;
       box-shadow: 0 5px 15px rgba(255, 153, 187, 0.3); /* soft pink shadow */
       margin: 2rem;
-      color: #444;
+      color: #111;
+      z-index: 10;
+      position: relative;
     }
     footer {
       font-size: 0.9rem;
-      color: #999;
+      color: #555;
       margin-top: auto;
       padding: 1rem;
+      z-index: 10;
+      position: relative;
+    }
+    a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #ff99bb;
     }
   </style>
 </head>

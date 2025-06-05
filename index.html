@@ -9,11 +9,10 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       text-align: center;
       background: white;
       background-image:
@@ -21,64 +20,86 @@
         radial-gradient(circle at 70% 60%, black 50px, transparent 55px),
         radial-gradient(circle at 50% 80%, black 30px, transparent 35px),
         radial-gradient(circle at 80% 20%, black 45px, transparent 50px),
-        radial-gradient(circle at 30% 70%, black 35px, transparent 40px);
+        radial-gradient(circle at 30% 70%, black 35px, transparent 40px),
+        radial-gradient(circle at 10% 10%, black 25px, transparent 30px),
+        radial-gradient(circle at 90% 90%, black 30px, transparent 35px),
+        radial-gradient(circle at 40% 40%, black 20px, transparent 25px),
+        radial-gradient(circle at 60% 15%, black 38px, transparent 43px),
+        radial-gradient(circle at 85% 75%, black 28px, transparent 33px);
       background-repeat: no-repeat;
       background-size: cover;
       color: #111;
+      overflow-x: hidden;
     }
+
     header {
-      background-color: #000000;
-      color: #ffe6f0;
       width: 100%;
-      padding: 1rem 0;
-      font-size: 1.8rem;
+      padding: 2rem 1rem 1rem;
+      background-color: transparent;
+      color: black;
+      font-size: 3rem;
       font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 0 rgba(255, 153, 187, 0.3);
       z-index: 10;
-      position: relative;
     }
+
     main {
-      max-width: 600px;
-      padding: 2rem;
+      max-width: 700px;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(255, 153, 187, 0.3);
-      margin: 2rem;
-      color: #111;
+      padding: 2rem;
+      margin: 1rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       z-index: 10;
       position: relative;
     }
+
+    main:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
     footer {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #555;
       margin-top: auto;
       padding: 1rem;
       z-index: 10;
       position: relative;
     }
+
     a {
-      color: #000000;
+      color: #000;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
+
     a:hover {
       color: #ff99bb;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
-  <header>Project Eleven - Robotic Dog</header>
+  <header>Project 11</header>
   <main>
-    <p>Welcome to Project Eleven, a cutting-edge robotic dog. This project uses reinforcement learning in MuJoCo with Python to train a lifelike robotic dog capable of dynamic and natural movements.</p>
-    <p>Follow along as we develop and train Eleven to explore the future of robotics and AI-driven locomotion.</p>
-    <img src="https://raw.githubusercontent.com/Sjschhabra/project-eleven.github.io/refs/heads/main/img/Eleven_model.png" alt="Robotic Dog - Project Eleven">
+    <p>Welcome to <strong>Project Eleven</strong>, a cutting-edge robotic quadruped inspired by natural locomotion. Built using reinforcement learning and MuJoCo simulations, Eleven learns to walk, balance, and adapt just like real-world animals.</p>
+    <p>Our mission is to explore advanced robotics, control systems, and artificial intelligence through realistic and dynamic robot design.</p>
+    <img src="https://raw.githubusercontent.com/Sjschhabra/project-eleven.github.io/refs/heads/main/img/Eleven_model.png" alt="Robotic Dog - Project Eleven" />
   </main>
   <footer>© 2025 Project Eleven</footer>
 </body>

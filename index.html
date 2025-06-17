@@ -6,223 +6,138 @@
   <title>Project Eleven - Robotic Dog</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      background: white;
-      background-image:
-        radial-gradient(circle at 20% 30%, black 40px, transparent 45px),
-        radial-gradient(circle at 70% 60%, black 50px, transparent 55px),
-        radial-gradient(circle at 50% 80%, black 30px, transparent 35px),
-        radial-gradient(circle at 80% 20%, black 45px, transparent 50px),
-        radial-gradient(circle at 30% 70%, black 35px, transparent 40px),
-        radial-gradient(circle at 10% 10%, black 25px, transparent 30px),
-        radial-gradient(circle at 90% 90%, black 30px, transparent 35px),
-        radial-gradient(circle at 40% 40%, black 20px, transparent 25px),
-        radial-gradient(circle at 60% 15%, black 38px, transparent 43px),
-        radial-gradient(circle at 85% 75%, black 28px, transparent 33px);
-      background-repeat: no-repeat;
-      background-size: cover;
-      color: #111;
-      overflow-x: hidden;
     }
 
     header {
       width: 100%;
-      padding: 2rem 1rem;
-      background-color: white;
-      color: black;
+      padding: 2rem;
+      background: linear-gradient(to right, #1a1a1a, #2b2b2b);
+      color: white;
       font-size: 2.5rem;
       font-weight: 800;
-      text-shadow: 2px 2px 0 rgba(255, 153, 187, 0.3);
-      border-bottom: 3px solid #ff99bb;
+      border-bottom: 2px solid #ff4f91;
+      text-align: center;
     }
 
-    main, section {
-      max-width: 700px;
-      background: white;
+    main.intro {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 1200px;
+      width: 100%;
       padding: 2rem;
-      margin: 1rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      z-index: 10;
-      position: relative;
-      text-align: left;
     }
 
     .intro img {
-      max-width: 60%;
-      height: auto;
-      margin: 1rem auto 2rem;
-      display: block;
+      max-width: 45%;
       border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      filter: grayscale(100%);
+      box-shadow: 0 0 20px rgba(255, 79, 145, 0.4);
+      filter: grayscale(50%);
     }
 
     .github-description {
-      background: #f7f7f7;
-      border-left: 5px solid #ff99bb;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 0.75rem;
+      width: 50%;
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
       font-size: 1rem;
       line-height: 1.6;
     }
 
     .github-description strong {
-      font-size: 1.2rem;
-      color: #ff3366;
+      font-size: 1.5rem;
+      color: #ff4f91;
     }
 
     section#current-progress {
-      text-align: center;
-      background: #fff0f6;
-      border: 2px solid #ff99bb;
-      border-radius: 1.5rem;
-      padding: 1rem 2rem 2rem;
-      box-shadow: 0 10px 25px rgba(255, 153, 187, 0.3);
+      background: #111;
+      border-top: 2px solid #ff4f91;
+      padding: 2rem;
+      max-width: 1200px;
+      width: 100%;
     }
 
     section#current-progress h2 {
       font-size: 2rem;
-      font-weight: 900;
-      color: #ff3366;
-      margin-bottom: 1rem;
-      text-shadow: 1px 1px 5px rgba(255, 153, 187, 0.7);
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #ff99bb, 0 0 10px #ff99bb, 0 0 20px #ff99bb;
-      }
-      to {
-        text-shadow: 0 0 10px #ff3366, 0 0 20px #ff3366, 0 0 30px #ff3366;
-      }
-    }
-
-    .toggle-buttons {
-      margin-bottom: 1rem;
-    }
-
-    .toggle-buttons button {
-      background: #ff99bb;
-      border: none;
-      border-radius: 25px;
-      color: #111;
       font-weight: bold;
-      padding: 0.5rem 1.2rem;
-      margin: 0 0.5rem;
-      cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      box-shadow: 0 4px 8px rgba(255, 153, 187, 0.4);
-    }
-
-    .toggle-buttons button:hover,
-    .toggle-buttons button.active {
-      background: #ff3366;
-      color: white;
-      box-shadow: 0 6px 12px rgba(255, 51, 102, 0.7);
-    }
-
-    #link-content {
-      font-size: 1.1rem;
-      margin-top: 1rem;
+      color: #ff4f91;
+      margin-bottom: 1.5rem;
     }
 
     #image-content {
-      display: none;
-      margin-top: 1rem;
+      display: block;
+      text-align: center;
     }
 
     #image-content img {
-      box-shadow: 0 4px 12px rgba(255, 153, 187, 0.6);
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 1rem;
       border-radius: 1rem;
-      max-height: 350px;
-      object-fit: contain;
-      max-width: 100%;
+      box-shadow: 0 0 20px rgba(255, 79, 145, 0.4);
+    }
+
+    .xml-description {
+      font-size: 1.1rem;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .xml-description a {
+      color: #ff4f91;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .xml-description a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      font-size: 0.85rem;
-      color: #555;
-      margin-top: auto;
       padding: 1rem;
-      z-index: 10;
-      position: relative;
-    }
-
-    a {
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #ff99bb;
+      font-size: 0.85rem;
+      color: #888;
+      border-top: 1px solid #333;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <header>🤖 Project Eleven</header>
+  <header>Project Eleven</header>
 
   <main class="intro">
-    <img src="https://raw.githubusercontent.com/Sjschhabra/project-eleven.github.io/refs/heads/main/img/Eleven_model.png" alt="Robotic Dog - Project Eleven" />
     <div class="github-description">
-      <strong>Project Eleven</strong> is an open-source robotic quadruped built using reinforcement learning and MuJoCo simulation. Inspired by animal locomotion, Eleven learns to walk, balance, and adapt through dynamic control systems.<br /><br />
-      This project combines research in robotics, control theory, and artificial intelligence — and it’s proudly hosted on GitHub for the world to explore, contribute, and evolve.
+      <strong>Project Eleven</strong> is an open-source robotic quadruped inspired by the agility of an American Pitbull Terrier — white with black spots, agile and strong.
+      <br /><br />
+      Built using MuJoCo simulation and reinforcement learning, our current focus is on making the robot body stable, understanding the simulation environment, and analyzing the data collected through its sensors. We aim to capture realistic movement and behavior in simulation before proceeding to real-world deployment.
     </div>
+    <img src="https://raw.githubusercontent.com/Sjschhabra/project-eleven.github.io/refs/heads/main/img/Eleven_model.png" alt="Robotic Dog - Project Eleven" />
   </main>
 
   <section id="current-progress">
-    <h2>Current Progress</h2>
-
-    <div class="toggle-buttons">
-      <button id="show-link" class="active">Show XML Link</button>
-      <button id="show-image">Show Model Image</button>
-    </div>
-
-    <div id="link-content">
-      Download or view the robot XML model here:<br />
-      <a href="https://github.com/Sjschhabra/project-eleven.github.io/tree/main/files/Eleven_Prototype.xml" target="_blank" rel="noopener noreferrer">
-        Eleven.xml
-      </a>
-    </div>
-
+    <h2>Simulation Progress</h2>
     <div id="image-content">
       <img src="https://raw.githubusercontent.com/Sjschhabra/project-eleven.github.io/refs/heads/main/img/Eleven_protoype_xml.png" alt="Robot XML Model Image" />
     </div>
+    <div class="xml-description">
+      This XML model represents our latest prototype simulated in MuJoCo. It's used to analyze joint feedback, force interactions, and environment response. <br><br>
+      View or download the model here:
+      <a href="https://github.com/Sjschhabra/project-eleven.github.io/tree/main/files/Eleven_Prototype.xml" target="_blank" rel="noopener noreferrer">Eleven_Prototype.xml</a>
+    </div>
   </section>
 
-  <footer>© 2025 Project Eleven – Built by curiosity and code.</footer>
-
-  <script>
-    const showLinkBtn = document.getElementById('show-link');
-    const showImageBtn = document.getElementById('show-image');
-    const linkContent = document.getElementById('link-content');
-    const imageContent = document.getElementById('image-content');
-
-    showLinkBtn.addEventListener('click', () => {
-      linkContent.style.display = 'block';
-      imageContent.style.display = 'none';
-      showLinkBtn.classList.add('active');
-      showImageBtn.classList.remove('active');
-    });
-
-    showImageBtn.addEventListener('click', () => {
-      linkContent.style.display = 'none';
-      imageContent.style.display = 'block';
-      showImageBtn.classList.add('active');
-      showLinkBtn.classList.remove('active');
-    });
-  </script>
+  <footer>© 2025 Project Eleven — Research. Simulate. Learn.</footer>
 </body>
 </html>

@@ -43,7 +43,7 @@
       z-index: 10;
     }
 
-    main {
+    main, section {
       max-width: 700px;
       background: white;
       padding: 2rem;
@@ -55,7 +55,7 @@
       position: relative;
     }
 
-    main:hover {
+    main:hover, section:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
@@ -92,6 +92,83 @@
     a:hover {
       color: #ff99bb;
     }
+
+    /* New section styling */
+    section#current-progress {
+      font-family: 'Courier New', Courier, monospace;
+      text-align: left;
+      background: #111;
+      color: #f0f0f0;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 25px rgba(255, 153, 187, 0.3);
+      border: 2px solid #ff99bb;
+      border-radius: 1.5rem;
+      padding: 1rem 2rem 2rem;
+    }
+
+    section#current-progress h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #ff99bb;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 5px rgba(255, 153, 187, 0.7);
+      animation: glow 2s ease-in-out infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #ff99bb, 0 0 10px #ff99bb, 0 0 20px #ff99bb;
+      }
+      to {
+        text-shadow: 0 0 10px #ff3366, 0 0 20px #ff3366, 0 0 30px #ff3366;
+      }
+    }
+
+    /* Toggle Button Styling */
+    .toggle-buttons {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .toggle-buttons button {
+      background: #ff99bb;
+      border: none;
+      border-radius: 25px;
+      color: #111;
+      font-weight: bold;
+      padding: 0.5rem 1.2rem;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: 0 4px 8px rgba(255, 153, 187, 0.4);
+    }
+
+    .toggle-buttons button:hover, .toggle-buttons button.active {
+      background: #ff3366;
+      color: white;
+      box-shadow: 0 6px 12px rgba(255, 51, 102, 0.7);
+    }
+
+    pre {
+      white-space: pre-wrap;
+      overflow-x: auto;
+      max-height: 350px;
+      margin: 0;
+    }
+
+    #xml-content, #image-content {
+      display: none;
+      border-radius: 1rem;
+    }
+
+    #image-content img {
+      box-shadow: 0 4px 12px rgba(255, 153, 187, 0.6);
+      border-radius: 1rem;
+      max-height: 350px;
+      object-fit: contain;
+    }
   </style>
 </head>
 <body>
@@ -101,6 +178,61 @@
     <p>Our mission is to explore advanced robotics, control systems, and artificial intelligence through realistic and dynamic robot design.</p>
     <img src="https://raw.githubusercontent.com/Sjschhabra/project-eleven.github.io/refs/heads/main/img/Eleven_model.png" alt="Robotic Dog - Project Eleven" />
   </main>
+
+  <section id="current-progress">
+    <h2>Current Progress</h2>
+
+    <div class="toggle-buttons">
+      <button id="show-xml" class="active">Show XML Model</button>
+      <button id="show-image">Show Model Image</button>
+    </div>
+
+    <pre id="xml-content" style="display: block;">
+&lt;robot name="eleven"&gt;
+  &lt;link name="base_link"&gt;
+    &lt;visual&gt;
+      &lt;geometry&gt;
+        &lt;box size="0.3 0.2 0.1"/&gt;
+      &lt;/geometry&gt;
+      &lt;material name="grey"/&gt;
+    &lt;/visual&gt;
+  &lt;/link&gt;
+  &lt;joint name="front_left_leg" type="revolute"&gt;
+    &lt;parent link="base_link"/&gt;
+    &lt;child link="front_left_lower"/&gt;
+    &lt;axis xyz="0 1 0"/&gt;
+  &lt;/joint&gt;
+  &lt;link name="front_left_lower"/&gt;
+  &lt;!-- Additional joints and links here --&gt;
+&lt;/robot&gt;
+    </pre>
+
+    <div id="image-content">
+      <img src="https://raw.githubusercontent.com/Sjschhabra/project-eleven.github.io/refs/heads/main/img/Eleven_protoype_xml.png" alt="Robot XML Model Image" />
+    </div>
+  </section>
+
   <footer>© 2025 Project Eleven</footer>
+
+  <script>
+    const showXmlBtn = document.getElementById('show-xml');
+    const showImageBtn = document.getElementById('show-image');
+    const xmlContent = document.getElementById('xml-content');
+    const imageContent = document.getElementById('image-content');
+
+    showXmlBtn.addEventListener('click', () => {
+      xmlContent.style.display = 'block';
+      imageContent.style.display = 'none';
+      showXmlBtn.classList.add('active');
+      showImageBtn.classList.remove('active');
+    });
+
+    showImageBtn.addEventListener('click', () => {
+      xmlContent.style.display = 'none';
+      imageContent.style.display = 'block';
+      showImageBtn.classList.add('active');
+      showXmlBtn.classList.remove('active');
+    });
+  </script>
 </body>
 </html>

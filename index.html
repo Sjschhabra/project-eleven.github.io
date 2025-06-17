@@ -34,13 +34,13 @@
 
     header {
       width: 100%;
-      padding: 2rem 1rem 1rem;
-      background-color: transparent;
+      padding: 2rem 1rem;
+      background-color: white;
       color: black;
-      font-size: 3rem;
-      font-weight: bold;
+      font-size: 2.5rem;
+      font-weight: 800;
       text-shadow: 2px 2px 0 rgba(255, 153, 187, 0.3);
-      z-index: 10;
+      border-bottom: 3px solid #ff99bb;
     }
 
     main, section {
@@ -50,52 +50,37 @@
       margin: 1rem;
       border-radius: 1.5rem;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       z-index: 10;
       position: relative;
+      text-align: left;
     }
 
-    main:hover, section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    img {
-      max-width: 100%;
+    .intro img {
+      max-width: 60%;
       height: auto;
+      margin: 1rem auto 2rem;
+      display: block;
       border-radius: 1rem;
-      margin-top: 1.5rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      filter: grayscale(100%);
     }
 
-    p {
-      font-size: 1.1rem;
+    .github-description {
+      background: #f7f7f7;
+      border-left: 5px solid #ff99bb;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 0.75rem;
+      font-size: 1rem;
       line-height: 1.6;
     }
 
-    footer {
-      font-size: 0.85rem;
-      color: #555;
-      margin-top: auto;
-      padding: 1rem;
-      z-index: 10;
-      position: relative;
+    .github-description strong {
+      font-size: 1.2rem;
+      color: #ff3366;
     }
 
-    a {
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #ff99bb;
-    }
-
-    /* Current Progress Section */
     section#current-progress {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       background: #fff0f6;
       border: 2px solid #ff99bb;
@@ -122,9 +107,7 @@
       }
     }
 
-    /* Toggle Button Styling */
     .toggle-buttons {
-      text-align: center;
       margin-bottom: 1rem;
     }
 
@@ -142,7 +125,8 @@
       box-shadow: 0 4px 8px rgba(255, 153, 187, 0.4);
     }
 
-    .toggle-buttons button:hover, .toggle-buttons button.active {
+    .toggle-buttons button:hover,
+    .toggle-buttons button.active {
       background: #ff3366;
       color: white;
       box-shadow: 0 6px 12px rgba(255, 51, 102, 0.7);
@@ -165,15 +149,37 @@
       object-fit: contain;
       max-width: 100%;
     }
+
+    footer {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: auto;
+      padding: 1rem;
+      z-index: 10;
+      position: relative;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff99bb;
+    }
   </style>
 </head>
 <body>
-  <header>Project 11</header>
+  <header>🤖 Project Eleven</header>
 
-  <main>
-    <p>Welcome to <strong>Project Eleven</strong>, a cutting-edge robotic quadruped inspired by natural locomotion. Built using reinforcement learning and MuJoCo simulations, Eleven learns to walk, balance, and adapt just like real-world animals.</p>
-    <p>Our mission is to explore advanced robotics, control systems, and artificial intelligence through realistic and dynamic robot design.</p>
+  <main class="intro">
     <img src="https://raw.githubusercontent.com/Sjschhabra/project-eleven.github.io/refs/heads/main/img/Eleven_model.png" alt="Robotic Dog - Project Eleven" />
+    <div class="github-description">
+      <strong>Project Eleven</strong> is an open-source robotic quadruped built using reinforcement learning and MuJoCo simulation. Inspired by animal locomotion, Eleven learns to walk, balance, and adapt through dynamic control systems.<br /><br />
+      This project combines research in robotics, control theory, and artificial intelligence — and it’s proudly hosted on GitHub for the world to explore, contribute, and evolve.
+    </div>
   </main>
 
   <section id="current-progress">
@@ -185,7 +191,7 @@
     </div>
 
     <div id="link-content">
-      Download or view the robot XML model here: 
+      Download or view the robot XML model here:<br />
       <a href="https://github.com/Sjschhabra/project-eleven.github.io/tree/main/files/Eleven_Prototype.xml" target="_blank" rel="noopener noreferrer">
         Eleven.xml
       </a>
@@ -196,7 +202,7 @@
     </div>
   </section>
 
-  <footer>© 2025 Project Eleven</footer>
+  <footer>© 2025 Project Eleven – Built by curiosity and code.</footer>
 
   <script>
     const showLinkBtn = document.getElementById('show-link');

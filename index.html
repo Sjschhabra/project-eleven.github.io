@@ -268,6 +268,243 @@
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
         }
+
+        .workflow-detail-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-header h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        .step-description {
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .component-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+
+        .component-list li {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 12px 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 3px solid #6366f1;
+            color: #e0e0e0;
+        }
+
+        .technical-note {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            line-height: 1.8;
+        }
+
+        .technical-note strong {
+            color: #a855f7;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .technical-note ol, .technical-note ul {
+            margin: 15px 0 15px 25px;
+            color: #c0c0c0;
+        }
+
+        .technical-note li {
+            margin: 8px 0;
+        }
+
+        .technical-note code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3px 8px;
+            border-radius: 5px;
+            color: #a855f7;
+            font-family: 'Courier New', monospace;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            color: #6366f1;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .config-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .config-item {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .config-item strong {
+            color: #6366f1;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .config-item p {
+            color: #b0b0b0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .file-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .file-card:hover::before {
+            left: 100%;
+        }
+
+        .file-card:hover {
+            transform: translateY(-10px);
+            border-color: #6366f1;
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .file-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 5px 15px rgba(99, 102, 241, 0.5));
+        }
+
+        .file-card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .file-card p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .file-format {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .usage-note {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .usage-note h4 {
+            color: #22c55e;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .usage-note ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .usage-note li {
+            color: #c0c0c0;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.6;
+        }
+
+        .usage-note li:last-child {
+            border-bottom: none;
+        }
+
+        .usage-note strong {
+            color: #22c55e;
+        }
     </style>
 </head>
 <body>
@@ -275,11 +512,13 @@
         <div class="hero-content">
             <h1>PROJECT ELEVEN</h1>
             <p class="subtitle">Building an Intelligent Quadruped Robot through Reinforcement Learning</p>
-            <div class="media-placeholder">
-                <div class="placeholder-text">
-                    📷 Add your robot image/video here<br>
-                    <small>(Eleven_model.png or demo video)</small>
-                </div>
+            <div style="margin: 40px 0;">
+                <img src="media/Eleven_model.png" alt="Project Eleven Final Vision" style="max-width: 400px; width: 100%; border-radius: 15px; box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4); border: 2px solid rgba(99, 102, 241, 0.3);">
+                <p style="margin-top: 15px; color: #a0a0a0; font-size: 0.9rem;">Final Vision: Quadruped Robot</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px;">
+                <img src="media/motion_gif1.gif" alt="Robot Motion Demo 1" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);">
+                <img src="media/motion_gif2.gif" alt="Robot Motion Demo 2" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);">
             </div>
         </div>
         <div class="scroll-indicator">
@@ -318,6 +557,124 @@
         <div class="media-placeholder" style="margin-top: 50px;">
             <div class="placeholder-text">
                 📊 Add workflow diagram or simulation screenshots here
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Detailed Workflow Documentation</h2>
+        
+        <div class="workflow-detail-card">
+            <div class="step-header">
+                <span class="step-number">Step 1</span>
+                <h3>CAD Design in SolidWorks</h3>
+            </div>
+            <p class="step-description">
+                Designed individual components for the bipedal prototype:
+            </p>
+            <ul class="component-list">
+                <li>Waist (1x)</li>
+                <li>Hip joints (2x - mirrored)</li>
+                <li>Upper legs (2x - mirrored)</li>
+                <li>Lower legs (2x - mirrored)</li>
+            </ul>
+            <div class="technical-note">
+                <strong>Key Technique - Independent Mirror Parts:</strong><br>
+                For mirrored components that need independent axes and references:
+                <ol>
+                    <li>Open the original part</li>
+                    <li>Select a face or plane for mirroring</li>
+                    <li>Go to <code>Insert → Mirror Part</code></li>
+                    <li>Choose features/body to mirror</li>
+                    <li>✨ <strong>Select "Break link to original part"</strong> under Link options</li>
+                    <li>Click OK to create a distinct, editable copy</li>
+                </ol>
+                This creates a new part file that can be modified independently without affecting the source part.
+            </div>
+            <div style="margin-top: 20px;">
+                <img src="media/model_cad.png" alt="SolidWorks CAD Assembly" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);">
+            </div>
+        </div>
+
+        <div class="workflow-detail-card">
+            <div class="step-header">
+                <span class="step-number">Step 2</span>
+                <h3>URDF Conversion with SW2URDF</h3>
+            </div>
+            <p class="step-description">
+                Converted SolidWorks assembly to URDF format using the SW2URDF exporter:
+            </p>
+            <div class="technical-note">
+                <strong>Configuration Requirements:</strong>
+                <ul>
+                    <li>Define the base link (root of kinematic tree)</li>
+                    <li>Configure all links in hierarchical order</li>
+                    <li>Set up joints between connected links</li>
+                    <li>Verify coordinate frames and joint axes</li>
+                </ul>
+                <strong>Output:</strong> A working URDF file with complete robot description
+            </div>
+            <div style="margin-top: 20px;">
+                <img src="media/model_urdf.png" alt="URDF Model Export" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);">
+            </div>
+        </div>
+
+        <div class="workflow-detail-card">
+            <div class="step-header">
+                <span class="step-number">Step 3</span>
+                <h3>MuJoCo XML Compilation</h3>
+            </div>
+            <p class="step-description">
+                Used MuJoCo's built-in compiler to convert URDF to MuJoCo XML format:
+            </p>
+            <div class="code-block">
+                <code>compile Assembly_2legs/urdf/Assembly_2legs.urdf Assembly_2legs/urdf/Assembly_2legs.xml</code>
+            </div>
+            <div class="technical-note">
+                <strong>Compiler Location:</strong><br>
+                The compile application is found in MuJoCo's bin directory:<br>
+                <code>C:\Users\[username]\mujoco-3.3.2-windows-x86_64\bin\compile.exe</code>
+                <br><br>
+                <strong>Result:</strong> A MuJoCo-ready XML file with the complete kinematic tree preserved
+            </div>
+            <div style="margin-top: 20px;">
+                <img src="media/model_xml_mujoco.png" alt="MuJoCo XML Model" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);">
+            </div>
+        </div>
+
+        <div class="workflow-detail-card">
+            <div class="step-header">
+                <span class="step-number">Step 4</span>
+                <h3>MuJoCo Configuration & Simulation</h3>
+            </div>
+            <p class="step-description">
+                With the XML file ready, you can now customize the simulation parameters:
+            </p>
+            <div class="config-grid">
+                <div class="config-item">
+                    <strong>⚙️ Actuators</strong>
+                    <p>Apply motors to joints for control</p>
+                </div>
+                <div class="config-item">
+                    <strong>🔧 Joint Limits</strong>
+                    <p>Set realistic motion constraints</p>
+                </div>
+                <div class="config-item">
+                    <strong>🎚️ Stiffness</strong>
+                    <p>Configure joint stiffness values</p>
+                </div>
+                <div class="config-item">
+                    <strong>📉 Damping</strong>
+                    <p>Add damping for realistic motion</p>
+                </div>
+            </div>
+            <div class="technical-note">
+                <strong>Status:</strong> Kinematic tree complete and ready for physics simulation!<br>
+                The model can now be loaded into MuJoCo for testing, visualization, and eventually reinforcement learning training.
+            </div>
+            <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <img src="media/motion_gif1.gif" alt="MuJoCo Simulation 1" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);">
+                <img src="media/motion_gif2.gif" alt="MuJoCo Simulation 2" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);">
             </div>
         </div>
     </div>
@@ -385,6 +742,52 @@
             <span class="tech-badge">Reinforcement Learning</span>
             <span class="tech-badge">Control Systems</span>
             <span class="tech-badge">Physics Simulation</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Project Files & Resources</h2>
+        <p style="text-align: center; color: #a0a0a0; margin-bottom: 40px;">
+            Download the complete project files to explore or replicate the workflow
+        </p>
+        <div class="files-grid">
+            <a href="files/Assembly_2legs.SLDASM" class="file-card" download>
+                <div class="file-icon">📦</div>
+                <h3>SolidWorks Assembly</h3>
+                <p>Complete 2-leg CAD assembly file</p>
+                <span class="file-format">.SLDASM</span>
+            </a>
+            
+            <a href="files/Assembly_2legs.urdf" class="file-card" download>
+                <div class="file-icon">🤖</div>
+                <h3>URDF File</h3>
+                <p>Robot description format with kinematic tree</p>
+                <span class="file-format">.URDF</span>
+            </a>
+            
+            <a href="files/Assembly_2legs.xml" class="file-card" download>
+                <div class="file-icon">📄</div>
+                <h3>MuJoCo XML</h3>
+                <p>Compiled simulation model ready for MuJoCo</p>
+                <span class="file-format">.XML</span>
+            </a>
+            
+            <a href="files/mujoco_simulation.ipynb" class="file-card" download>
+                <div class="file-icon">📓</div>
+                <h3>Jupyter Notebook</h3>
+                <p>Python code for MuJoCo simulation and analysis</p>
+                <span class="file-format">.IPYNB</span>
+            </a>
+        </div>
+        
+        <div class="usage-note">
+            <h4>📚 How to Use These Files:</h4>
+            <ul>
+                <li><strong>Assembly File:</strong> Open in SolidWorks 2020 or later to view/edit the CAD model</li>
+                <li><strong>URDF File:</strong> Can be viewed in ROS visualization tools or used for conversion</li>
+                <li><strong>XML File:</strong> Load directly into MuJoCo simulator for physics testing</li>
+                <li><strong>Jupyter Notebook:</strong> Requires Python 3.8+, MuJoCo, and standard scientific libraries</li>
+            </ul>
         </div>
     </div>
 

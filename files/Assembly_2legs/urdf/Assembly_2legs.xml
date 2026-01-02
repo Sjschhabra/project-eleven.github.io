@@ -1,0 +1,123 @@
+<mujoco model="Assembly_2legs">
+  <compiler angle="radian"/>
+
+  <option gravity="0 0 -9.81" timestep="0.002">
+    <flag contact="enable" gravity="enable"/>
+  </option>
+
+  <visual>
+    <quality shadowsize="0"/>
+  </visual>
+
+  <size nconmax="100" njmax="500"/>
+
+  <default>
+      <geom 
+          solimp="0.9 0.95 0.001"
+          solref="0.01 0.5"
+          friction="1 0.1 0.1"
+      />
+  </default>
+
+  <asset>
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="lBL0" file="lBL0.STL"/>
+    <mesh name="lBL1" file="lBL1.STL"/>
+    <mesh name="lBL2" file="lBL2.STL"/>
+    <mesh name="lBR0" file="lBR0.STL"/>
+    <mesh name="lBR1" file="lBR1.STL"/>
+    <mesh name="lBR2" file="lBR2.STL"/>
+    <texture name="floor_tex" type="2d" builtin="checker" rgb1="0.6 0.8 1" rgb2="1 1 1" width="512" height="512"/>
+    <material name="floor_mat" texture="floor_tex" texrepeat="10 10" reflectance="0.3"/>
+  </asset>
+
+  <worldbody>
+    <!-- Lighting -->
+    <light name="top" pos="1 1 50"/>
+        
+    <!-- Cameras -->
+    <camera name="target" mode="targetbody" target="base_link" pos="-0.15 -.4 .5" axisangle="1 0 0 90" />
+    
+    <body name="floor" pos="0 0 0">
+        <!-- Checkered floor -->
+        <geom name="floor" type="plane" size="5 5 0.1" rgba="0.8 0.9 1 1" material="floor_mat" pos="0 0 -0.0"/>
+    </body>
+    
+    <!-- Base body with free joint -->
+    <body name="base_link" pos="0 0 0.078">
+      <freejoint/>
+      <inertial pos="0.0279506803184872 -0.0310001450420563 0.029723393312707" quat="0.707 0 -0.707 0" mass="0.300" diaginertia="0.000657866 0.000586255 0.000110156"/>
+      <geom type="mesh" rgba="0.95 1 0.941176470588235 1" mesh="base_link"/>
+
+      <!-- IMU sensor body (visual marker) -->
+      <body name="imu_site" pos="0.07 -0.03 0.045">
+        <geom type="sphere" size="0.01" rgba="0 0 0 1"/>
+        <site name="imu" size="0.005"/>
+      </body>
+
+      <!-- Left leg attached to base -->
+      <body name="lBL0" pos="0.017811 -0.081 0.033208" quat="0.707105 0.707108 0 0">
+        <inertial pos="0.0369797 0 -0.00178508" quat="0.499379 0.50062 0.50062 0.499379" mass="0.1" diaginertia="3.24734e-05 2.8721e-05 1.47782e-05"/>
+        <joint name="jBL0" pos="0 0 0" axis="1 0 0" range="-1.047 1.047" damping="0.5" limited="true" stiffness="0" armature="0.01"/>
+        <geom type="mesh" rgba="1 0.588235294117647 0.588235294117647 1" mesh="lBL0"/>
+        <body name="lBL1" pos="0.0240622 0 0.0205">
+          <inertial pos="0.0297901 -4.10804e-08 0.01769" quat="-1.82647e-05 0.687728 -1.61158e-05 0.725968" mass="0.07" diaginertia="7.89135e-05 7.86069e-05 6.20752e-06"/>
+          <joint name="jBL1" pos="0 0 0" axis="0 0 1" range="-3.14159 0.2" damping="0.5" limited="true" stiffness="0" armature="0.01"/>
+          <geom type="mesh" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" mesh="lBL1"/>
+          <body name="lBL2" pos="0.1225 0 0.0111052">
+            <inertial pos="-0.0234453 -0.0406114 0.00889478" quat="0.612222 0.353813 -0.612222 0.353813" mass="0.06" diaginertia="1.49366e-05 1.46327e-05 5.61592e-07"/>
+            <joint name="jBL2" pos="0 0 0" axis="0 0 1" range="-0.5 1.047" damping="0.5" limited="true" stiffness="0" armature="0.01"/>
+            <geom type="mesh" rgba="0.992156862745098 0.980392156862745 1 1" mesh="lBL2"/>
+          </body>
+        </body>
+      </body>
+      
+      <!-- Right leg attached to base -->
+      <body name="lBR0" pos="0.017811 0.019 0.033208" quat="0.707105 0.707108 0 0">
+        <inertial pos="0.0369797 0 0.00178508" quat="0.50062 0.499379 0.499379 0.50062" mass="0.1" diaginertia="3.24734e-05 2.8721e-05 1.47782e-05"/>
+        <joint name="jBR0" pos="0 0 0" axis="1 0 0" range="-1.047 1.047" damping="0.5" limited="true" stiffness="0" armature="0.01"/>
+        <geom type="mesh" rgba="1 0.588235294117647 0.588235294117647 1" mesh="lBR0"/>
+        <body name="lBR1" pos="0.0240622 0 -0.0205">
+          <inertial pos="0.0297889 -8.22161e-08 -0.0176898" quat="-6.91808e-05 0.725967 -7.1593e-05 0.687729" mass="0.07" diaginertia="7.8911e-05 7.86041e-05 6.20766e-06"/>
+          <joint name="jBR1" pos="0 0 0" axis="0 0 1" range="-3.14159 0.2" damping="0.5" limited="true" stiffness="0" armature="0.01"/>
+          <geom type="mesh" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" mesh="lBR1"/>
+          <body name="lBR2" pos="0.1225 0 -0.0111052">
+            <inertial pos="-0.0234447 -0.0406102 -0.00889487" quat="0.612222 0.353817 -0.612224 0.353808" mass="0.06" diaginertia="1.49361e-05 1.46322e-05 5.61583e-07"/>
+            <joint name="jBR2" pos="0 0 0" axis="0 0 1" range="-0.5 1.047" damping="0.5" limited="true" stiffness="0" armature="0.01"/>
+            <geom type="mesh" rgba="0.992156862745098 0.980392156862745 1 1" mesh="lBR2"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <!-- IMU Sensors -->
+  <sensor>
+    <!-- Accelerometer (measures linear acceleration) -->
+    <accelerometer name="accel" site="imu"/>
+    
+    <!-- Gyroscope (measures angular velocity) -->
+    <gyro name="gyro" site="imu"/>
+    
+    <!-- Magnetometer (measures magnetic field - optional) -->
+    <magnetometer name="mag" site="imu"/>
+    
+    <!-- Frame orientation (quaternion) -->
+    <framequat name="orientation" objtype="site" objname="imu"/>
+    
+    <!-- Frame linear velocity -->
+    <framelinvel name="linvel" objtype="site" objname="imu"/>
+
+    <!-- Frame angular velocity -->
+    <frameangvel name="angvel" objtype="site" objname="imu"/>
+  </sensor>
+
+  <actuator>
+    <motor name="motor_jBL0" joint="jBL0" gear="1" ctrllimited="true" ctrlrange="-10 10"/>
+    <motor name="motor_jBL1" joint="jBL1" gear="1" ctrllimited="true" ctrlrange="-10 10"/>
+    <motor name="motor_jBL2" joint="jBL2" gear="1" ctrllimited="true" ctrlrange="-10 10"/>
+    <motor name="motor_jBR0" joint="jBR0" gear="1" ctrllimited="true" ctrlrange="-10 10"/>
+    <motor name="motor_jBR1" joint="jBR1" gear="1" ctrllimited="true" ctrlrange="-10 10"/>
+    <motor name="motor_jBR2" joint="jBR2" gear="1" ctrllimited="true" ctrlrange="-10 10"/>
+  </actuator>
+</mujoco>

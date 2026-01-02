@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Assembly_2legs">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0279506803184872 -0.0310001450420563 0.029723393312707"
+        rpy="0 0 0" />
+      <mass
+        value="0.2256301581738" />
+      <inertia
+        ixx="0.000110972096730945"
+        ixy="1.01278701606383E-09"
+        ixz="-5.05389644440682E-05"
+        iyy="0.000589088006197645"
+        iyz="-4.04778183612972E-11"
+        izz="0.000661453126018528" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.996078431372549 1 0.941176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lBL0">
+    <inertial>
+      <origin
+        xyz="0.0369796994169903 6.93889390390723E-18 -0.00178507803306503"
+        rpy="0 0 0" />
+      <mass
+        value="0.0694855692046376" />
+      <inertia
+        ixx="1.47782806487988E-05"
+        ixy="7.997752458929E-22"
+        ixz="3.46091213455787E-08"
+        iyy="3.24733950202541E-05"
+        iyz="-1.31239389643897E-21"
+        izz="2.87209553037247E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBL0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.588235294117647 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBL0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jBL0"
+    type="revolute">
+    <origin
+      xyz="0.017811 -0.081 0.033208"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lBL0" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="lBL1">
+    <inertial>
+      <origin
+        xyz="0.0297900916214869 -4.10803778286284E-08 0.0176900103032271"
+        rpy="0 0 0" />
+      <mass
+        value="0.0543878633139573" />
+      <inertia
+        ixx="6.41999530217215E-06"
+        ixy="-1.2377538867077E-10"
+        ixz="-3.92471302853237E-06"
+        iyy="7.86068796742841E-05"
+        iyz="-2.165337421528E-11"
+        izz="7.87010706226405E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBL1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.756862745098039 0.941176470588235 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBL1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jBL1"
+    type="revolute">
+    <origin
+      xyz="0.0240621799195583 0 0.0205"
+      rpy="0 0 0" />
+    <parent
+      link="lBL0" />
+    <child
+      link="lBL1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="lBL2">
+    <inertial>
+      <origin
+        xyz="-0.0234452874274445 -0.0406114064763683 0.00889477698267038"
+        rpy="0 0 0" />
+      <mass
+        value="0.0164357398740559" />
+      <inertia
+        ixx="1.11252791169978E-05"
+        ixy="-6.08698991949548E-06"
+        ixz="-1.88350905166657E-12"
+        iyy="4.06902746037637E-06"
+        iyz="-4.24097295533046E-12"
+        izz="1.4936594144131E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBL2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.992156862745098 0.980392156862745 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBL2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jBL2"
+    type="revolute">
+    <origin
+      xyz="0.1225 0 0.0111051976260555"
+      rpy="0 0 0" />
+    <parent
+      link="lBL1" />
+    <child
+      link="lBL2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="lBR0">
+    <inertial>
+      <origin
+        xyz="0.0369796994169903 0 0.00178507803306503"
+        rpy="0 0 0" />
+      <mass
+        value="0.0694855692046376" />
+      <inertia
+        ixx="1.47782806487988E-05"
+        ixy="1.31046349366624E-21"
+        ixz="-3.46091213455789E-08"
+        iyy="3.24733950202541E-05"
+        iyz="6.52160058374468E-22"
+        izz="2.87209553037247E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBR0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBR0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jBR0"
+    type="revolute">
+    <origin
+      xyz="0.017811 0.019 0.033208"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lBR0" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="lBR1">
+    <inertial>
+      <origin
+        xyz="0.0297888736921436 -8.22161395769294E-08 -0.017689800484389"
+        rpy="0 0 0" />
+      <mass
+        value="0.0543868045593658" />
+      <inertia
+        ixx="6.42010461491763E-06"
+        ixy="-1.45916099385264E-10"
+        ixz="3.92433164625103E-06"
+        iyy="7.8604109906323E-05"
+        iyz="-5.32956086414728E-11"
+        izz="7.86985666311823E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBR1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBR1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jBR1"
+    type="revolute">
+    <origin
+      xyz="0.0240621799195583 0 -0.0205"
+      rpy="0 0 0" />
+    <parent
+      link="lBR0" />
+    <child
+      link="lBR1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="lBR2">
+    <inertial>
+      <origin
+        xyz="-0.0234446957264386 -0.0406102338451713 -0.00889487445886598"
+        rpy="0 0 0" />
+      <mass
+        value="0.0164353798682279" />
+      <inertia
+        ixx="1.11248398272465E-05"
+        ixy="-6.08678057598061E-06"
+        ixz="-5.31762855735152E-11"
+        iyy="4.0689202627825E-06"
+        iyz="-9.77066961687033E-11"
+        izz="1.49360661245119E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBR2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_2legs/meshes/lBR2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jBR2"
+    type="revolute">
+    <origin
+      xyz="0.1225 0 -0.0111051976260556"
+      rpy="0 0 0" />
+    <parent
+      link="lBR1" />
+    <child
+      link="lBR2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>

@@ -178,7 +178,7 @@ import mujoco
 import mujoco.viewer
 
 # Load the model
-model = mujoco.MjModel.from_xml_path('files/Assembly_2legs.xml')
+model = mujoco.MjModel.from_xml_path('files/Assembly_2legs/urdf/Assembly_2legs.xml')
 data = mujoco.MjData(model)
 
 # Launch interactive viewer
